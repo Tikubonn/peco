@@ -1,0 +1,4 @@
+
+class IfElse (Exception):
+  
+  pass

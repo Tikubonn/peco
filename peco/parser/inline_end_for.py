@@ -1,0 +1,4 @@
+
+class InlineEndFor (Exception):
+  
+  pass
