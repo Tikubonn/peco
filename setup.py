@@ -7,7 +7,7 @@ setup(
   description = "Simple template engine for HTML.",
   author = "tikubonn",
   author_email = "https://twitter.com/tikubonn",
-  licence = "MIT License",
+  licence = "MIT",
   install_requires = [],
   dependency_links = [],
   test_suite = "tests"
