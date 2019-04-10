@@ -3,7 +3,7 @@
 | [日本語](README.ja.md) | English |
 
 Peco is a small template engine for HTML that written in Python.
-this template engine support comment-like HTML-comment-like syntax for don't break page layout when it has not rendered yet.
+this template engine support HTML-comment-like syntax for don't break page layout when it has not rendered yet.
 
 ```html
 <!DOCTYPE html>
