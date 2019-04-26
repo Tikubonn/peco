@@ -1,5 +1,5 @@
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
   name = "peco",
@@ -10,5 +10,7 @@ setup(
   licence = "MIT",
   install_requires = [],
   dependency_links = [],
-  test_suite = "tests"
+  test_suite = "tests",
+  packages = find_packages(exclude=["tests"])
 )
+
