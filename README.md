@@ -44,20 +44,31 @@ template.render_string(name = "tikubonn") ## Hello, tikubonn!
 
 ## Use with shell
 
-Peco has `__main__.py`, so you can use Peco as command-line tool.
-please read under the table if you want to get detail of supported option.
+Peco install global command of `peco` to your computer when installed Peco. 
+so you can use Peco like as command line tools.
 
-```sh
-python -m peco --parameter '{"person": {"name": "tikubonn"}}' ## standard-input to standard-output
-python -m peco --input-file 'input.html' --parameter-file 'parameter.json' --output-file 'output.html'
+```shell
+peco --parameter '{"person": {"name": "tikubonn"}}'
 ```
 
-| Option | Description |
+```shell
+peco 'input.html' --parameter-file 'parameter.json' --output-file 'output.html'
+```
+
+```shell
+python -m peco 'input.html' --parameter-file 'parameter.json' --output-file 'output.html'
+```
+
+`peco` command has supported there arguments.
+
+| Argument | Description |
 | ---- | ---- |
-| `--input-file [file]` | tell an input file name to Peco. it have not to be `.html` file format, but it must obey the Peco's syntax. if you didn't use this option, Peco use the *standard-input*. |
-| `--output-file [file]` | tell an output file name to Peco. it have not to be `.html` file format, but it must obey the Peco's syntax. if you didn't use this option, Peco use the *standard-output*. | 
-| `--parameter-file [file]` | tell a parameter file name to Peco. it use to expand template. it must be `.json` file format. if didn't use this option, Peco use empty associative-array as parameter. | 
-| `--parameter [parameter]` | tell a parameter to Peco. it used to expand template. it must be `JSON` format. if didn't use this option, Peco use empty associative-array as parameter. if Peco took `--parameter-file` and this option, it is undefined what Peco which use. |
+| `input file` | tell an input file name to Peco. it have not to be `.html` file format, but it must obey the Peco's syntax. if you didn't use this option, Peco use the *standard-input*. |
+| `--output-file` or `-o` | tell an output file name to Peco. it have not to be `.html` file format, but it must obey the Peco's syntax. if you didn't use this option, Peco use the *standard-output*. | 
+| `--parameter-file` | tell a parameter file name to Peco. it use to expand template. it must be `.json` file format. if didn't use this option, Peco use empty associative-array as parameter. | 
+| `--parameter` | tell a parameter to Peco. it used to expand template. it must be `JSON` format. if didn't use this option, Peco use empty associative-array as parameter. if Peco took `--parameter-file` and this option, it is undefined what Peco which use. |
+| `--version` or `-v` | print version information then exit. |
+| `--help` or `-h` | print help information then exit. |
 
 ## Basic Syntax
 

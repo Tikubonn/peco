@@ -46,20 +46,30 @@ template.render_string(name = "tikubonn") ## Hello, tikubonn!
 
 ## コマンドラインから呼び出す
 
-Pecoは`__main__.py`が用意されているため、Pythonのモジュールからコマンドラインツールとして呼び出すことができます。
-オプションの詳細に関しては下の表を参照ください。
+Pecoはインストール後に下記のように呼び出すことができます。
 
-```sh
-python -m peco --parameter '{"person": {"name": "tikubonn"}}' ## 標準入力から標準出力へ
-python -m peco --input-file '入力ファイル.html' --parameter-file 'パラメーターファイル.json' --output-file '出力ファイル.html'
+```shell
+peco --parameter '{"person": {"name": "tikubonn"}}'
 ```
 
-| オプション | 概要 |
+```shell
+peco 'input.html' --parameter-file 'parameter.json' --output-file 'output.html'
+```
+
+```shell
+python -m peco 'input.html' --parameter-file 'parameter.json' --output-file 'output.html'
+```
+
+対応している引数は下記のとおりです。
+
+| 引数 | 概要 |
 | ---- | ---- |
-| `--input-file [file]` | 入力元のファイルを指定します。形式は問いませんが、Pecoの文法に従っている必要があります。未指定の場合には標準入力が使用されます。 |
-| `--output-file [file]` | 出力先のファイルを指定します。形式は問いませんが、Pecoの文法に従っている必要があります。未指定の場合には標準出力が使用されます。 | 
-| `--parameter-file [file]` | 埋め込むパラメータを含んだ`.json`形式のファイルです。ここに定義されている値がテンプレートの各所に埋め込まれます。未指定の場合には空の連想配列が使用されます。| 
-| `--parameter [parameter]` | `.json`形式の埋め込むパラメータです。未指定の場合には空の連想配列が使用されます。`--parameter-file`と同時に指定した場合の動作は未定義です。 |
+| `入力ファイル` | 入力元のファイルを指定します。形式は問いませんが、Pecoの文法に従っている必要があります。未指定の場合には標準入力が使用されます。 |
+| `--output-file` `-o` | 出力先のファイルを指定します。形式は問いませんが、Pecoの文法に従っている必要があります。未指定の場合には標準出力が使用されます。 | 
+| `--parameter-file` | 埋め込むパラメータを含んだ`.json`形式のファイルです。ここに定義されている値がテンプレートの各所に埋め込まれます。未指定の場合には空の連想配列が使用されます。| 
+| `--parameter` | `.json`形式の埋め込むパラメータです。未指定の場合には空の連想配列が使用されます。`--parameter-file`と同時に指定した場合の動作は未定義です。 |
+| `--version` `-v` | コマンドのバージョン情報を出力後に終了します。 |
+| `--help` `-h` | コマンドのヘルプ情報を出力後に終了します。 |
 
 ## 文法の紹介
 
