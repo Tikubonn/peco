@@ -15,7 +15,7 @@ def __main ():
     nargs = "?"
   )
   argparser.add_argument(
-    "-p"
+    "-p",
     "--parameter-file",
     dest = "parameter_file",
     help = "take a parameter file name that must be .json file format. if you didn't use this option, peco use empty associative-array.",
