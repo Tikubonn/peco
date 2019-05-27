@@ -6,7 +6,7 @@ with open("README.md", mode="r", encoding="utf-8") as stream:
 
 setup(
   name = "peco",
-  version = "0.9.0",
+  version = "0.9.1",
   description = "Simple template engine for HTML.",
   long_description = long_description,
   licence = "MIT",

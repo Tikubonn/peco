@@ -3,7 +3,7 @@ from argparse import ArgumentParser, FileType
 from peco.parser import parse
 import json
 
-def __main ():
+def __main__ ():
   argparser = ArgumentParser(
     description = "transform text file with peco template engine.",
   )
@@ -13,6 +13,12 @@ def __main ():
     type = FileType(mode="r", encoding="utf-8"),
     default="-",
     nargs = "?"
+  )
+  argparser.add_argument(
+    "--parameter",
+    dest = "parameter",
+    help = "take a parameter text that must be .json file format. if you didn't use this option, peco use empty associative-array.",
+    default = None 
   )
   argparser.add_argument(
     "-p",
@@ -39,12 +45,14 @@ def __main ():
   # main 
   template = parse(arguments.input_file)
   parameter = {}
-  if arguments.parameter_file is not None:
+  if arguments.parameter is not None:
+    parameter = json.loads(arguments.parameter)
+  elif arguments.parameter_file is not None:
     parameter = json.load(arguments.parameter_file)
   template.render(arguments.output_file, **parameter)
 
 def main ():
   try:
-    __main()
+    __main__()
   except KeyboardInterrupt:
     pass
