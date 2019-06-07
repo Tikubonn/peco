@@ -1,4 +1,4 @@
 
 class EndIf (Exception):
-  
-  pass
+
+    pass

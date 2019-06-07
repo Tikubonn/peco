@@ -1,2 +1,2 @@
-from . import template 
+from . import template
 from . import parser

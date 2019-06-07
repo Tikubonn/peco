@@ -1,4 +1,4 @@
 
 class InlineIfElse (Exception):
-  
-  pass
+
+    pass

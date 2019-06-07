@@ -1,4 +1,4 @@
 
 class IfThen (Exception):
-  
-  pass
+
+    pass

@@ -1,4 +1,4 @@
 
 class SyntaxError (Exception):
-  
-  pass
+
+    pass
